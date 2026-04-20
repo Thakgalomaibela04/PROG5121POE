@@ -3,21 +3,23 @@
 
 public class Registration {
 
+    // private varibles to store user data
+    Static String username;
+    Static String password;
+    Static String cellNumber;
+    Static String firstName;
+    Static String lastName;
+    Static boolean isRegistered = false;
 
-    static String username;
-    static String password;
-    static String cellNumber;
-    static String firstName;
-    static String lastName;
-    static boolean isRegistered = false;
-
-    static Scanner input = new Scanner(System.in);
+   //Scanner object fot usr input
+ static Scanner input = new Scanner(System.in);
 
     public static void main(String[] args) {
         
         int choice;
         
-        do {
+        // main menu Loop, keeps the program running
+     do {
             System.out.println("\n===== MENU =====");
             System.out.println("1. Register");
             System.out.println("2. Login");
@@ -27,7 +29,8 @@ public class Registration {
             choice = input.nextInt();
             input.nextLine(); 
             
-            switch(choice) {
+           // Switch to handle Menu options
+          switch(choice) {
                 case 1:
                     System.out.print("Enter First Name: ");
                     firstName = input.nextLine();
@@ -50,12 +53,16 @@ public class Registration {
 
     // --- METHODS AS REQUIRED ---
 
-    public static boolean checkUserName(String user) {
+     // Method to check username
+    // Condition: Must contain an underscore and have less less than 5 characters
+     public static boolean checkUserName(String user) {
         // Condition: Contains underscore AND no more than 5 characters
         return user.contains("_") && user.length() <= 5;
     }
 
-    public static boolean checkPasswordComplexity(String pass) {
+      // Method  to check password strength
+     // Conditions: 8 Char, 1 Capital, 1 Number and 1 Special character
+     public static boolean checkPasswordComplexity(String pass) {
         // Condition: At least 8 chars, 1 Capital, 1 Number, 1 Special character
         if (pass.length() < 8) return false;
         
@@ -71,17 +78,18 @@ public class Registration {
 
         return hasCapital && hasNumber && hasSpecial;
     }
-
+     // Method to check the cellPhoneNumber
+     // Conditions: Must start with +27 and no more than 10 digit after 
     public static boolean checkCellPhoneNumber(String cell) {
         // Condition: Contains international code (+) and no more than 10 digits after
         return cell.startsWith("+") && cell.length() <= 12;
     }
-
+    // Method to handle the registration process
     public static String registerUser() {
         
         String result = "";
         
-        // Check Username
+        // Get and validate Username
         while(true) {
             System.out.print("Enter Username: ");
             username = input.nextLine();
@@ -93,7 +101,7 @@ public class Registration {
             }
         }
 
-        // Check Password
+        // Get and validate Password
         while(true) {
             System.out.print("Enter Password: ");
             password = input.nextLine();
@@ -105,7 +113,7 @@ public class Registration {
             }
         }
 
-        // Check Cell Number
+        // Get and validate CallPhoneNumber
         while(true) {
             System.out.print("Enter Cell Number: ");
             cellNumber = input.nextLine();
@@ -121,7 +129,7 @@ public class Registration {
         isRegistered = true;
         return result;
     }
-
+    // Method to verify login details
     public static boolean loginUser() {
         System.out.print("Enter Username: ");
         String inputUser = input.nextLine();
@@ -130,7 +138,7 @@ public class Registration {
 
         return inputUser.equals(username) && inputPass.equals(password);
     }
-
+     // Methhod to display login message
     public static String returnLoginStatus() {
         if(loginUser()) {
             return "Welcome " + firstName + ", " + lastName + " it is great to see you again.";
