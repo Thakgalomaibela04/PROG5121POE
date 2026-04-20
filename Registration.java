@@ -11,7 +11,7 @@ public class Registration {
     Static String lastName;
     Static boolean isRegistered = false;
 
-   //Scanner object fot usr input
+   //Scanner object fot user input
  static Scanner input = new Scanner(System.in);
 
     public static void main(String[] args) {
