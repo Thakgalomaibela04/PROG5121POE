@@ -81,8 +81,8 @@ public class Registration {
      // Method to check the cellPhoneNumber
      // Conditions: Must start with +27 and no more than 10 digit after 
     public static boolean checkCellPhoneNumber(String cell) {
-        // Condition: Contains international code (+) and no more than 10 digits after
-        return cell.startsWith("+") && cell.length() <= 12;
+        // Condition: Contains international code (+27) and no more than 10 digits after
+        return cell.startsWith("+27") && cell.length() <= 12;
     }
     // Method to handle the registration process
     public static String registerUser() {
