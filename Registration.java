@@ -24,7 +24,7 @@ public class Registration {
             System.out.println("1. Register");
             System.out.println("2. Login");
             System.out.println("3. Exit");
-            System.out.print("Enter your choice: ");
+            System.out.print("Enter your option: ");
             
             choice = input.nextInt();
             input.nextLine(); 
