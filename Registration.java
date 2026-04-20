@@ -16,7 +16,7 @@ public class Registration {
 
     public static void main(String[] args) {
         
-        int choice;
+        int option;
         
         // main menu Loop, keeps the program running
      do {
@@ -26,11 +26,11 @@ public class Registration {
             System.out.println("3. Exit");
             System.out.print("Enter your option: ");
             
-            choice = input.nextInt();
+            option = input.nextInt();
             input.nextLine(); 
             
            // Switch to handle Menu options
-          switch(choice) {
+          switch(option) {
                 case 1:
                     System.out.print("Enter First Name: ");
                     firstName = input.nextLine();
@@ -48,7 +48,7 @@ public class Registration {
                     System.out.println("Invalid option, try again.");
             }
             
-        } while (choice != 3);
+        } while (option != 3);
     }
 
     // --- METHODS AS REQUIRED ---
