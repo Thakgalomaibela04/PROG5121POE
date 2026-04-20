@@ -4,12 +4,12 @@
 public class Registration {
 
     // private varibles to store user data
-    Static String username;
-    Static String password;
-    Static String cellNumber;
-    Static String firstName;
-    Static String lastName;
-    Static boolean isRegistered = false;
+    private String username;
+    private String password;
+    private String cellNumber;
+    private String firstName;
+    private String lastName;
+    private boolean isRegistered = false;
 
    //Scanner object fot user input
  static Scanner input = new Scanner(System.in);
